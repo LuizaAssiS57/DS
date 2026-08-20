@@ -1,4 +1,4 @@
-package DesafiosAulaDS2;
+package Diversao02;
 
 import java.util.Scanner;
 

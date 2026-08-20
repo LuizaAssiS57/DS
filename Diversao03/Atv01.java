@@ -1,4 +1,4 @@
-package diversaocondicional;
+package Diversao03;
 
 import java.util.Scanner;
 

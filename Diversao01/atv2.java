@@ -1,10 +1,10 @@
-package diversao;
+package Diversao01;
 
 import java.util.Scanner;
 
-//ESCREVA UM PROGRAMA QUE CALCULE A MÉDIA ARITMÉTICA DE TRÊS NÚMEROS.
+//ESCREVA UM PROGRAMA QUE CALCULE A MÉDIA ARITMÉTICA DE DOIS NÚMEROS.
 
-public class atv3 {
+public class atv2 {
     
     public static void main(String[] args) {
         
@@ -16,10 +16,7 @@ public class atv3 {
         System.out.println("Informe N2: ");
         double N2 = sc.nextDouble();
 
-        System.out.println("Informe N3: ");
-        double N3 = sc.nextDouble();
-
-        double media = (N1+N2+N3)/3;
+        double media = (N1 + N2)/2;
 
         System.out.println("Sua média é: "+ media);
         sc.close();
