@@ -1,4 +1,4 @@
-package Introducao;
+package introducao;
 public class Numeros {
     public static void main(String[] args) {
         

@@ -1,4 +1,4 @@
-package Diversao03;
+package diversao03;
 
 import java.util.Scanner;
 

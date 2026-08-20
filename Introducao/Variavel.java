@@ -1,4 +1,4 @@
-package Introducao;
+package introducao;
 public class Variavel {
     
     public static void main(String[] args) {

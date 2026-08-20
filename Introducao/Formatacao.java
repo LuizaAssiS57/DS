@@ -1,4 +1,4 @@
-package Introducao;
+package introducao;
 public class Formatacao {
     public static void main(String[] args) {
         String produto = "Teclado";

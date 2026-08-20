@@ -1,4 +1,4 @@
-package Whiledowhile;
+package whiledowhile;
 
 public class Wh01 {
    public static void main(String[] args) {

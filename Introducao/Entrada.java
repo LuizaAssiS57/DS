@@ -1,4 +1,4 @@
-package Introducao;
+package introducao;
 import java.util.Scanner;
 
 public class Entrada {

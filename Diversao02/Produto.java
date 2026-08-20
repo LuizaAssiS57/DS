@@ -1,4 +1,4 @@
-package Diversao02;
+package diversao02;
 
 public class Produto {
     public static void main(String[] args) {
