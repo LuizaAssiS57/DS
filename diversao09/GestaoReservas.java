@@ -14,7 +14,7 @@ public class GestaoReservas {
                 System.out.println("Quantidade inválida! O hotel pode possuir de 1 a 5 quartos.");
             }
         }
-        sc.nextLine(); 
+        sc.nextLine();
 
         String[] quartos = new String[qtdQuartos];
         int[] camas = new int[qtdQuartos];
@@ -32,7 +32,7 @@ public class GestaoReservas {
             System.out.println("3 - Reservar quarto");
             System.out.println("4 - Consultar reservas por quarto");
             System.out.println("5 - Consultar reservas por hóspede");
-            System.out.println("6 - Encerrar sistema");
+            System.out.println("0 - Encerrar sistema");
             System.out.print("ESCOLHA UMA OPÇÃO: ");
             op = sc.nextInt();
             sc.nextLine(); 
@@ -111,7 +111,6 @@ public class GestaoReservas {
                     if (quartoExiste == 0) {
                         System.out.println("Este quarto não existe!");
                     } else {
-                        // Contador de reservas
                         int qtdReservasQuarto = 0; 
                         System.out.println("Hóspedes no " + buscaQuarto + ":");
                         for (int i = 0; i < totalReservas; i++) {
@@ -145,15 +144,15 @@ public class GestaoReservas {
                     }
                     break;
 
-                case 6:
-                    System.out.println("Encerrando o sistema SunStay. Até logo!");
+                case 0:
+                    System.out.println("Encerrando o sistema SunStay!");
                     break;
 
                 default:
                     System.out.println("Opção inválida!");
                     break;
             }
-        } while (op != 6);
+        } while (op != 0);
         
         sc.close();
     }

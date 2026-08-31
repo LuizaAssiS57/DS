@@ -115,7 +115,7 @@ public class CadastroProdutos {
                     }else{
                         for (int i = posRem; i < qtd; i++) {
                             produtos[i] = produtos[i+1];
-                            quantidades[i] = quantidades[i+1]
+                            quantidades[i] = quantidades[i+1];
                         }
                         produtos[qtd-1] = null;
                         quantidades[qtd-1] = 0;
