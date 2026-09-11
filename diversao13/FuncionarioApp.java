@@ -67,11 +67,19 @@ public class FuncionarioApp {
                 }
                 case 3:
                     System.out.println("=====INFORMAÇÕES DO PROFESSOR=====");
-                    p.exibirInfo();
+                    if (p != null) {
+                        p.exibirInfo();
+                    }else{
+                        System.out.println("Não há professores cadastrados!");
+                    }
                     break;
                 case 4:
                     System.out.println("=====INFORMAÇÕES DO TÉCNICO=====");
-                    t.exibirInfo();
+                    if (t != null) {
+                        t.exibirInfo();
+                    }else{
+                        System.out.println("Não há técnicos cadastrados!");
+                    }
                     break;
                 case 0:
                     System.out.println("Saindo...");

@@ -6,17 +6,22 @@ public class VeiculoApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        Carro c = null;
+        Moto m = null;
+
         int op;
 
         do {
             System.out.println("===Sistema de cadastro de veiculos===");
             System.out.println("1 - Carro");
             System.out.println("2 - Moto");
+            System.out.println("3 - Mostrar Carro");
+            System.out.println("4 - Mostrar Moto");
             System.out.println("0 - Sair");
             System.out.println("Escolha uma opção: ");
 
             while (!sc.hasNextInt()) {
-                System.out.println("Opção inválida! Digite 0, 1 ou 2");
+                System.out.println("Opção inválida! Digite 0 até 4");
                 sc.next();
             }
             op = sc.nextInt();
@@ -33,13 +38,9 @@ public class VeiculoApp {
                     System.out.println("Informe a quantidade de portas: ");
                     int qtdportas = sc.nextInt();
 
-                    Carro c = new Carro(marca, ano, qtdportas);
-                    c.setMarca(marca);
-                    c.setAno(ano);
-                    c.setQtdportas(qtdportas);
+                    c = new Carro(marca, ano, qtdportas);
 
-                    System.out.println("\n---Informações do veiculo---");
-                    c.exibirDados();
+                    
                     break;
                 }
                 case 2:{
@@ -52,15 +53,27 @@ public class VeiculoApp {
                     System.out.println("Informe cilindragem: ");
                     int cilindrada = sc.nextInt();
 
-                    Moto m = new Moto(marca, ano, cilindrada);
-                    m.setMarca(marca);
-                    m.setAno(ano);
-                    m.setCilindrada(cilindrada);
+                    m = new Moto(marca, ano, cilindrada);
 
-                    System.out.println("\n--Informações do veiculo---");
-                    m.exibirDados();
+                    
                     break;
                 }
+                case 3:
+                    System.out.println("\n---Informações do veiculo---");
+                    if (c != null){
+                        c.exibirDados();
+                    }else{
+                        System.out.println("Não há carros cadastrados!");
+                    }
+                    break;
+                case 4:
+                    System.out.println("\n--Informações do veiculo---");
+                    if (m != null) {
+                        m.exibirDados();
+                    }else{
+                        System.out.println("Não há motos cadastradas!");
+                    }
+                    break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
