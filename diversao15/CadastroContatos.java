@@ -36,7 +36,6 @@ public class CadastroContatos {
 
                     contatos.add(new ContatoPessoal(nome, numero, parentesco));
                     System.out.println("CONTATO PESSOAL CADASTRADO!");
-                    // identificador = 1;
                     break;
                 }
                 case 2:{
@@ -58,58 +57,78 @@ public class CadastroContatos {
                 }
                 case 3:
                     System.out.println("<<<<<<< LISTA DE CONTATOS >>>>>>");
-                    for (int i = 0; i < contatos.size(); i++) {
-                        System.out.println((i+1) + " - " + contatos.get(i).exibirDados());
+                    if (contatos.isEmpty()) {
+                        System.out.println("NENHUM CONTATO CADASTRADO");
+                    } else {
+                        for (int i = 0; i < contatos.size(); i++) {
+                            System.out.println((i+1) + " - " + contatos.get(i).exibirDados());
+                        }
                     }
                     break;
                 case 4:
                     System.out.println("INFORME O NOME PARA PERQUISAR: ");
-                    String busca = sc.nextLine();
-
-                    boolean encontrado = false;
-
-                    for (int i = 0; i < contatos.size(); i++) {
-                        if (contatos.get(i).getNome().equalsIgnoreCase(busca)) {
-                            System.out.println("ENCONTRADO: " + contatos.get(i).exibirDados());
-
-                            encontrado = true;
+                    if (contatos.isEmpty()) {
+                        System.out.println("NENHUM CONTATO CADASTRADO");
+                    } else {
+                        String busca = sc.nextLine();
+    
+                        boolean encontrado = false;
+                        for (int i = 0; i < contatos.size(); i++) {
+                            if (contatos.get(i).getNome().equalsIgnoreCase(busca)) {
+                                System.out.println("ENCONTRADO: " + contatos.get(i).exibirDados());
+    
+                                encontrado = true;
+                            }
                         }
-                    }
 
-                    if (!encontrado) {
-                        System.out.println("CONTATO NÃO EMCONTRADO!");
+                        if (!encontrado) {
+                            System.out.println("CONTATO NÃO EMCONTRADO!");
+                        }
                     }
                     break;
                 case 5:
-                    System.out.println("INFORME O NÚMERO PARA ALTERAR: ");
-                    int pos = sc.nextInt();
+                    System.out.println("\n<<<<<<< ALTERAR CONTATO >>>>>>>");
+                    if (contatos.isEmpty()) {
+                        System.out.println("NENHUM CONTATO CADASTRADO");
+                    } else {
+                        for (int i = 0; i < contatos.size(); i++) {
+                            System.out.println((i + 1) + " - " + contatos.get(i).getNome());
+                        }
+                    }
+                    System.out.println("INFORME O NÚMERO DO CONTATO PARA ALTERAR: ");
+                    int pos = sc.nextInt() -1;
                     sc.nextLine();
 
-
-
-                    if (pos > 0 && pos <= contatos.size()) {
+                    if (pos >= 0 && pos < contatos.size()) {
+                        Contato contato = contatos.get(pos);
                         System.out.println("NOVO NOME: ");
                         String novoNome = sc.nextLine();
 
                         System.out.println("NOVO NÚMERO: ");
                         String novoNumero = sc.nextLine();
-                        contatos.get(pos -1).setNome(novoNome);
-                        contatos.get(pos -1).setNumero(novoNumero);
-                        System.out.println("CONTATO ALTERADO!");
+
+                        contato.setNome(novoNome);
+                        contato.setNumero(novoNumero);
+                        System.out.println("CONTATO ALTERADO COM SUCESSO!");
                     }else{
                         System.out.println("CONTATO INVÁLIDO");
                     }
                     break;
                 case 6:
-                    System.out.println("INFORME O INDICE PARA REMOVER: ");
-                    int index = sc.nextInt();
-                    sc.nextLine();
-
-                    if (index > 0 && index <= contatos.size()) {
-                        contatos.remove(index-1);
-                        System.out.println("CONTATO REMOVIDO");
+                    System.out.println("\n<<<<<<<<EXCLUIR CONTATO>>>>>>>>>");
+                    if (contatos.isEmpty()) {
+                        System.out.println("NENHUM CONTATO CADASTRADO");
                     } else {
-                        System.out.println("CONTATO INVÁLIDO!");
+                        System.out.println("INFORME O NÚMERO DO CONTATO PARA REMOVER: ");
+                        int index = sc.nextInt();
+                        sc.nextLine();
+    
+                        if (index > 0 && index <= contatos.size()) {
+                            contatos.remove(index-1);
+                            System.out.println("CONTATO REMOVIDO");
+                        } else {
+                            System.out.println("CONTATO INVÁLIDO!");
+                        }
                     }
                     break;
                 case 7:
