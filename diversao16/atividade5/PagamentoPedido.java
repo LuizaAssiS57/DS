@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade5;
 
 public interface PagamentoPedido {
     

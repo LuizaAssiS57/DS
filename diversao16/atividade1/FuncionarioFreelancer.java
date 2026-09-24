@@ -1,4 +1,4 @@
-package diversao16.d1funcionario;
+package diversao16.atividade1;
 
 public class FuncionarioFreelancer extends Funcionario {
 
@@ -9,7 +9,6 @@ public class FuncionarioFreelancer extends Funcionario {
         super(nome, cpf);
         this.valorHora = valorHora;
         this.horasTrabalho = horasTrabalho;
-        
     }
 
     public double getValorHora() {
@@ -40,6 +39,6 @@ public class FuncionarioFreelancer extends Funcionario {
 
     @Override
     public String exibirDados(){
-        return super.exibirDados() + "\n" + "Tipo: Freelancer" + "\n" + "Horas trabalhadas: " + horasTrabalho + "\n" + "Valor por hora: " + valorHora + "\n" + "";
+        return super.exibirDados() + "\nTipo: Freelancer\nHoras trabalhadas: " + horasTrabalho + "\nValor por hora: " + valorHora + "\n";
     }
 }

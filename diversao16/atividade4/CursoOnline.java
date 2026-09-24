@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade4;
 
 public class CursoOnline extends Curso{
     
@@ -27,7 +27,6 @@ public class CursoOnline extends Curso{
 		this.codigoAcesso = codigoAcesso;
 	}
 
-    
 	@Override
 	public double realizarMatricula() {
         return getValor();

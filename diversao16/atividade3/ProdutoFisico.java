@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade3;
 
 public class ProdutoFisico extends Produto{
     
@@ -31,7 +31,7 @@ public class ProdutoFisico extends Produto{
     
     @Override
     public String exibirDados() {
-        return super.exibirDados() + "\nTipo: Produto fisico:\nFrete: R$ " + String.format("%.2f", frete) + "\n";
+        return super.exibirDados() + "\nTipo: Produto fisico\nFrete: R$ " + String.format("%.2f", frete) + "\n";
     }
     
 }

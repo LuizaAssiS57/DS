@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -37,7 +37,7 @@ public class Principal {
                     sc.nextLine();
 
                     funcionarios.add(new FuncionarioCLT(nome, cpf, salarioMensal));
-                    System.out.println("CLT cadastrado!");
+                    System.out.println("FUNCIONÁRIO CLT CADASTRADO!");
                     break;
                 }
                 case 2:{
@@ -56,13 +56,13 @@ public class Principal {
                     sc.nextLine();
 
                     funcionarios.add(new FuncionarioFreelancer(nome, cpf, valorHora, horasTrabalho));
-                    System.out.println("Freelancer cadastrado!");
+                    System.out.println("FUNCIONÁRIO FREELANCER CADASTRADO!");
                     break;
                 }
                 case 3:
                     System.out.println("<<<<< LISTA DE FUNCIONÁRIOS >>>>>");
                     if (funcionarios.isEmpty()) {
-                        System.out.println("Nenhum funcionário cadastrado");
+                        System.out.println("NENHUM FUNCIONÁRIO REGISTRADO!");
                     } else {
                         for (int i = 0; i < funcionarios.size(); i++) {
                             System.out.println((i + 1) + " - " + funcionarios.get(i).exibirDados());
@@ -72,7 +72,7 @@ public class Principal {
                 case 4:{
                     System.out.println("\n>>> PESQUISAR FUNCIONÁRIO <<<");
                     if (funcionarios.isEmpty()) {
-                        System.out.println("Nenhum funcionário registrado!");
+                        System.out.println("NENHUM FUNCIONÁRIO REGISTRADO!");
                         break;
                     }
 
@@ -82,7 +82,7 @@ public class Principal {
 
                     for (Funcionario f : funcionarios) {
                         if (f.getCpf().equalsIgnoreCase(cpfBusca)) {
-                            System.out.println("\nFuncionário encontrado:");
+                            System.out.println("\nFUNCIONÁRIO ENCONTRADO:");
                             System.out.println(f.exibirDados());
                             encontrado = true;
                             break;
@@ -90,7 +90,7 @@ public class Principal {
                     }
 
                     if (!encontrado) {
-                        System.out.println("CPF não encontrado.");
+                        System.out.println("CPF NÃO ENCONTRADO!");
                     }
                     break;
                 }
@@ -98,7 +98,7 @@ public class Principal {
                 case 5:{
                     System.out.println("\n>>> CALCULAR PAGAMENTO COM BÔNUS <<<");
                     if (funcionarios.isEmpty()) {
-                        System.out.println("Nenhum funcionário registrado!");
+                        System.out.println("NENHUM FUNCIONÁRIO REGISTRADO!");
                         break;
                     }
 
@@ -121,14 +121,14 @@ public class Principal {
                     }
 
                     if (!encontrado) {
-                        System.out.println("CPF não encontrado!");
+                        System.out.println("CPF NÃO ENCONTRADO!");
                     }
                     break;
                 }
                 case 6:{
                     System.out.println("\n>>> EXCLUIR FUNCIONÁRIO <<<");
                     if (funcionarios.isEmpty()) {
-                        System.out.println("Nenhum funcionário registrado!");
+                        System.out.println("NENHUM FUNCIONÁRIO REGISTRADO!");
                         break;
                     }
 
@@ -138,19 +138,19 @@ public class Principal {
 
                     for (int i = 0; i < funcionarios.size(); i++) {
                         if (funcionarios.get(i).getCpf().equalsIgnoreCase(cpfBusca)) {
-                            System.out.println("Funcionário: " + funcionarios.get(i).getNome() + " removido com sucesso!");
+                            System.out.println("FUNCIONÁRIO: " + funcionarios.get(i).getNome() + " removido com sucesso!");
                             funcionarios.remove(i);
                             removido = true;
                         }
                     }
 
                     if (!removido) {
-                        System.out.println("CPF não encontrado.");
+                        System.out.println("CPF NÃO ENCONTRADO!");
                     }
                     break;
                 }
                 case 0:
-                    System.out.println("FUI......");
+                    System.out.println("SAINDO...");
                     sc.close();
                     return;
             

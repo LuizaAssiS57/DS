@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade3;
 
 public abstract class Produto implements Venda{
     

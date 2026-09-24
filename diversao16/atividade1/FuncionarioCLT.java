@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade1;
 
 public class FuncionarioCLT extends Funcionario{
 

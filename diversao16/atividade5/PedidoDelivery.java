@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade5;
 
 public class PedidoDelivery extends Pedido{
     
@@ -43,8 +43,8 @@ public class PedidoDelivery extends Pedido{
     }
     
     @Override
-    public String exiirDados() {
-        return super.exiirDados() + "\nTipo: Delivery\nEndereço: " + endereco +
+    public String exibirDados() {
+        return super.exibirDados() + "\nTipo: Delivery\nEndereço: " + endereco +
         "\nTaxa de entrega: R$ " + String.format("%.2f", taxaEntrega) +
         "\nValor total: R$ " + String.format("%.2f", (getValorPedido() + taxaEntrega)) + "\n";
     }

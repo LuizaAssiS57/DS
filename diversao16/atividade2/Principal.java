@@ -1,9 +1,9 @@
-package diversao16;
+package diversao16.atividade2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class VeiculoApp {
+public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Veiculo> veiculos = new ArrayList<>();
@@ -20,7 +20,7 @@ public class VeiculoApp {
             System.out.print("ESCOLHA UMA OPÇÃO: ");
             
             int op = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             switch (op) {
                 case 1: {
@@ -39,7 +39,7 @@ public class VeiculoApp {
                     sc.nextLine();
 
                     veiculos.add(new Carro(placa, modelo, ano, valorDiaria));
-                    System.out.println("Carro cadastrado com sucesso!");
+                    System.out.println("CARRO CADASTRADO COM SUCESSO!");
                     break;
                 }
                 case 2: {
@@ -58,13 +58,13 @@ public class VeiculoApp {
                     sc.nextLine();
 
                     veiculos.add(new Moto(placa, modelo, ano, valorDiaria));
-                    System.out.println("Moto cadastrada com sucesso!");
+                    System.out.println("MOTO CADASTRADA COM SUCESSO!");
                     break;
                 }
                 case 3: {
                     System.out.println("\n<<<<< DADOS DOS VEÍCULOS >>>>>");
                     if (veiculos.isEmpty()) {
-                        System.out.println("Nenhum veículo cadastrado!");
+                        System.out.println("NENHUM VEÍCULO CADASTRADO!");
                     } else {
                         for (int i = 0; i < veiculos.size(); i++) {
                             System.out.println("---------------------------");
@@ -76,7 +76,7 @@ public class VeiculoApp {
                 case 4: {
                     System.out.println("\n>>> CALCULAR ALUGUEL <<<");
                     if (veiculos.isEmpty()) {
-                        System.out.println("Nenhum veículo cadastrado!");
+                        System.out.println("NENHUM VEÍCULO CADASTRADO!");
                         break;
                     }
                     
@@ -98,14 +98,14 @@ public class VeiculoApp {
                     }
                     
                     if (!encontrado) {
-                        System.out.println("Veículo com essa placa não encontrado.");
+                        System.out.println("ESSA PLACA NÃO PERTENCE A NENHUM VEÍCULO REGISTRADO!");
                     }
                     break;
                 }
                 case 5: {
                     System.out.println("\n>>> CALCULAR ALUGUEL COM DESCONTO <<<");
                     if (veiculos.isEmpty()) {
-                        System.out.println("Nenhum veículo cadastrado!");
+                        System.out.println("NENHUM VEÍCULO CADASTRADO!");
                         break;
                     }
                     
@@ -130,12 +130,12 @@ public class VeiculoApp {
                     }
                     
                     if (!encontrado) {
-                        System.out.println("Veículo com essa placa não encontrado.");
+                        System.out.println("ESSA PLACA NÃO PERTENCE A NENHUM VEÍCULO REGISTRADO!");
                     }
                     break;
                 }
                 case 0: {
-                    System.out.println("FUI.......");
+                    System.out.println("SAINDO...");
                     sc.close();
                     return;
                 }

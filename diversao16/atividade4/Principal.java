@@ -1,11 +1,12 @@
-package diversao16;
+package diversao16.atividade4;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CursoApp {
+public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         ArrayList<Curso> cursos = new ArrayList<>();
 
         String nomeAlunoMatriculado = "";
@@ -57,14 +58,14 @@ public class CursoApp {
                         System.out.print("Turno (Manhã/Tarde/Noite): ");
                         String turno = sc.nextLine();
                         cursos.add(new CursoPresencial(codigo, nome, carga, valor, sala, turno));
-                        System.out.println("Curso Presencial cadastrado!");
+                        System.out.println("CURSO PRESENCIAL CADASTRADO!");
                     } else if (tipo == 2) {
                         System.out.print("Endereço da Plataforma (URL): ");
                         String plataforma = sc.nextLine();
                         System.out.print("Código de Acesso: ");
                         String codigoAcesso = sc.nextLine();
                         cursos.add(new CursoOnline(codigo, nome, carga, valor, plataforma, codigoAcesso));
-                        System.out.println("Curso Online cadastrado!");
+                        System.out.println("CURSO ONLINE CADASTRADO!");
                     } else {
                         System.out.println("Tipo inválido!");
                     }
@@ -82,7 +83,7 @@ public class CursoApp {
                 case 3: {
                     System.out.println("\n>>> REALIZAR MATRÍCULA <<<");
                     if (cursos.isEmpty()) {
-                        System.out.println("Nenhum curso disponível!");
+                        System.out.println("NENHUM CURSO CADASTRADO!");
                         break;
                     }
                     if (nomeAlunoMatriculado.isEmpty()) {
@@ -106,14 +107,14 @@ public class CursoApp {
                         }
                     }
                     
-                    if (!encontrado) System.out.println("Curso não encontrado.");
+                    if (!encontrado) System.out.println("CURSO NÃO ENCONTRADO!");
                     break;
                 }
                 
                 case 4: {
                     System.out.println("\n>>> REALIZAR MATRÍCULA COM DESCONTO <<<");
                     if (cursos.isEmpty()) {
-                        System.out.println("Nenhum curso disponível!");
+                        System.out.println("NENHUM CURSO DISPONIVEL!");
                         break;
                     }
                     if (nomeAlunoMatriculado.isEmpty()) {
@@ -141,14 +142,14 @@ public class CursoApp {
                         }
                     }
                     
-                    if (!encontrado) System.out.println("Curso não encontrado.");
+                    if (!encontrado) System.out.println("CURSO NÃO ENCONTRADO!");
                     break;
                 }
                 
                 case 5: {
                     System.out.println("\n<<<<< DADOS DOS CURSOS >>>>>");
                     if (cursos.isEmpty()) {
-                        System.out.println("Nenhum curso cadastrado!");
+                        System.out.println("NENHUM CURSO DISPONIVEL!");
                     } else {
                         for (Curso c : cursos) {
                             System.out.println("---------------------------");
@@ -165,7 +166,7 @@ public class CursoApp {
                         System.out.println("Curso: " + cursoMatriculado.getNome());
                         System.out.printf("Valor Pago: R$ %.2f\n", valorMatriculaFinal);
                     } else {
-                        System.out.println("Nenhuma matrícula realizada ainda.");
+                        System.out.println("NENHUMA MATRICULA REGISTRADA!");
                     }
                     break;
                 }

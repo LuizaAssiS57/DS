@@ -1,9 +1,9 @@
-package diversao16;
+package diversao16.atividade5;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PedidoApp {
+public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Pedido> pedidos = new ArrayList<>();
@@ -18,7 +18,7 @@ public class PedidoApp {
             System.out.print("ESCOLHA UMA OPÇÃO: ");
             
             int op = sc.nextInt();
-            sc.nextLine(); // Limpa o buffer
+            sc.nextLine();
 
             switch (op) {
                 case 1: {

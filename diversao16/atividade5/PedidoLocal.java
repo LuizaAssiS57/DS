@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade5;
 
 public class PedidoLocal extends Pedido{
 
@@ -22,8 +22,8 @@ public class PedidoLocal extends Pedido{
     }
     
     @Override
-    public String exiirDados() {
-        return super.exiirDados() + "\nTipo: Pedido local\n";
+    public String exibirDados() {
+        return super.exibirDados() + "\nTipo: Pedido local\n";
     }
     
 }

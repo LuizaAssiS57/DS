@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade2;
 
 public abstract class Veiculo implements Aluguel{
     

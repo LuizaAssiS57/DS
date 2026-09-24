@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.atividade4;
 
 public interface Matricula {
     

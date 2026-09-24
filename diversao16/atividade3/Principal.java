@@ -1,9 +1,9 @@
-package diversao16;
+package diversao16.atividade3;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProdutoApp {
+public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Produto> produtos = new ArrayList<>();
@@ -20,7 +20,7 @@ public class ProdutoApp {
             System.out.print("ESCOLHA UMA OPÇÃO: ");
             
             int op = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             switch (op) {
                 case 1: {
@@ -40,7 +40,7 @@ public class ProdutoApp {
                     sc.nextLine();
 
                     produtos.add(new ProdutoFisico(codigo, nome, preco, frete));
-                    System.out.println("Produto Físico cadastrado com sucesso!");
+                    System.out.println("PRODUTO FISICO CADASTRADO COM SUCESSO!");
                     break;
                 }
                 case 2: {
@@ -57,13 +57,13 @@ public class ProdutoApp {
                     sc.nextLine();
 
                     produtos.add(new ProdutoDigital(codigo, nome, preco));
-                    System.out.println("Produto Digital cadastrado com sucesso!");
+                    System.out.println("PRODUTO DIGITAL CADASTRADO COM SUCESSO!");
                     break;
                 }
                 case 3: {
                     System.out.println("\n<<<<< DADOS DOS PRODUTOS >>>>>");
                     if (produtos.isEmpty()) {
-                        System.out.println("Nenhum produto cadastrado!");
+                        System.out.println("NENHUM PRODUTO CADASTRADO!");
                     } else {
                         for (int i = 0; i < produtos.size(); i++) {
                             System.out.println("---------------------------");
@@ -75,7 +75,7 @@ public class ProdutoApp {
                 case 4: {
                     System.out.println("\n>>> REALIZAR VENDA <<<");
                     if (produtos.isEmpty()) {
-                        System.out.println("Nenhum produto cadastrado!");
+                        System.out.println("NENHUM PRODUTO CADASTRADO!");
                         break;
                     }
                     
@@ -91,7 +91,7 @@ public class ProdutoApp {
                             sc.nextLine();
                             
                             double valorFinal = p.realizarVenda(qtd);
-                            System.out.println("\n--- Resumo da Venda ---");
+                            System.out.println("\n--- NOTA FISCAL ---");
                             System.out.println("Produto: " + p.getNome());
                             System.out.printf("Valor Final: R$ %.2f\n", valorFinal);
                             encontrado = true;
@@ -100,14 +100,14 @@ public class ProdutoApp {
                     }
                     
                     if (!encontrado) {
-                        System.out.println("Produto com esse código não encontrado.");
+                        System.out.println("PRODUTO COM ESSE CÓDIGO NÃO ENCONTRADO!");
                     }
                     break;
                 }
                 case 5: {
                     System.out.println("\n>>> REALIZAR VENDA COM DESCONTO <<<");
                     if (produtos.isEmpty()) {
-                        System.out.println("Nenhum produto cadastrado!");
+                        System.out.println("NENHUM PRODUTO CADASTRADO!");
                         break;
                     }
                     
@@ -135,12 +135,12 @@ public class ProdutoApp {
                     }
                     
                     if (!encontrado) {
-                        System.out.println("Produto com esse código não encontrado.");
+                        System.out.println("PRODUTO COM ESSE CÓDIGO NÃO ENCONTRADO!");
                     }
                     break;
                 }
                 case 0: {
-                    System.out.println("Fui......");
+                    System.out.println("SAINDO...");
                     sc.close();
                     return;
                 }
