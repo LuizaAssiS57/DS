@@ -46,17 +46,20 @@ public class Conta {
 		this.agencia = agencia;
 	}
 
-    public void depositar(double valor) {
+    public void depositarDinheiro(double valor) {
         if (valor > 0) {
             saldo += valor;
-            System.out.printf("Depósito realizado com sucesso! Novo saldo: R$ %.2f\n", saldo);
+			System.out.println("Depósito realizado com sucesso!");
+            System.out.printf("Novo saldo: R$ %.2f\n", saldo);
         }else {
             System.out.println("Não é possivel depositar um valor menor ou igual a 0");
         }
     }
 
     public void consultarSaldo(){
-        System.out.printf("Saldo disponivel: R$ %.2f", saldo);
+		System.out.println("++++++ SALDO DISPONIVEL ++++++");
+        System.out.printf("R$ %.2f", saldo);
+		System.out.println("+++++++++++++++++++++++++");
     }
 
     public void mostrarDadosConta(){

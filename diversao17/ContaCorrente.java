@@ -8,7 +8,7 @@ public class ContaCorrente extends Conta implements Pagamento{
 
     // Pagamento em dinheiro
 	@Override
-	public void realizarPagamento(double valor) {
+	public void fazerPagamento(double valor) {
         if (valor <= 0) {
             System.out.println("O valor do pagamento deve ser maior que 0");
             return;
@@ -20,12 +20,13 @@ public class ContaCorrente extends Conta implements Pagamento{
         }
 
         setSaldo(getSaldo() - valor);
-        System.out.printf("Pagamento em dinheiro realizado! Novo saldo: R$ %.2f\n", getSaldo());
+        System.out.println("Pagamento em dinheiro realizado!");
+        System.out.printf("Novo saldo: R$ %.2f\n", getSaldo());
 	}
 
     // Pagamento via PIX
 	@Override
-	public void realizarPagamento(double valor, String chavePix) {
+	public void fazerPagamento(double valor, String chavePix) {
         if (valor <= 0) {
             System.out.println("O valor do pagamento deve ser maior que 0");
             return;
@@ -42,7 +43,7 @@ public class ContaCorrente extends Conta implements Pagamento{
 
     // Pagamento via cartão
 	@Override
-	public void realizarPagamento(double valor, int parcelas) {
+	public void fazerPagamento(double valor, int parcelas) {
 
         if (valor <= 0) {
             System.out.println("O valor do pagamento deve ser maior que 0");

@@ -53,7 +53,7 @@ public class Principal {
                 case 3:
                     System.out.println("Informe o valor para depósito: R$ ");
                     double valorDep = sc.nextDouble();
-                    conta.depositar(valorDep);
+                    conta.depositarDinheiro(valorDep);
                     break;
                 case 4:
                     System.out.println("Informe o valor do PIX: R$ ");
@@ -61,22 +61,22 @@ public class Principal {
                     sc.nextLine();
                     System.out.println("Informe a chave PIX: ");
                     String chave = sc.nextLine();
-                    conta.realizarPagamento(valorPix, chave);
+                    conta.fazerPagamento(valorPix, chave);
                     break;
                 case 5:
                     System.out.println("Informe o valor da compra: R$ ");
                     double valorCartao = sc.nextDouble();
                     System.out.println("Informe a quantidade de parcelas: ");
                     int parcelas = sc.nextInt();
-                    conta.realizarPagamento(valorCartao, parcelas);
+                    conta.fazerPagamento(valorCartao, parcelas);
                     break;
                 case 6:
                     System.out.println("Informe o valor do pagamneto em dinheiro: R$ ");
                     double valorDinheiro = sc.nextDouble();
-                    conta.realizarPagamento(valorDinheiro);
+                    conta.fazerPagamento(valorDinheiro);
                     break;
                 case 0:
-                    System.out.println("FUI.......");
+                    System.out.println("SAINDO...");
                     break;
             
                 default:

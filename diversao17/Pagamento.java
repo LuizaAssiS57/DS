@@ -3,11 +3,11 @@ package diversao17;
 public interface  Pagamento {
 
     // dinheiro
-    void realizarPagamento(double valor);
+    void fazerPagamento(double valor);
 
     // PIX
-    void realizarPagamento(double valor, String chavePix);
+    void fazerPagamento(double valor, String chavePix);
 
     // cartão
-    void realizarPagamento(double valor, int parcelas);
+    void fazerPagamento(double valor, int parcelas);
 }
