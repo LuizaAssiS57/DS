@@ -1,4 +1,4 @@
-package diversao16;
+package diversao16.d1funcionario;
 
 public class FuncionarioFreelancer extends Funcionario {
 

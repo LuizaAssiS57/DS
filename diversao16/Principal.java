@@ -11,21 +11,21 @@ public class Principal {
 
         while (true) {
             System.out.println("<<<>>> SISTEMA FUNCIONÁRIOS <<<>>>");
-            System.out.println("1 - Cadastrar funcionário CLT");
-            System.out.println("2 - Cadastrar funcionário Freelancer");
-            System.out.println("3 - Mostrar os dados cadastrados");
-            System.out.println("4 - Pesquisar funcionário");
-            System.out.println("5 - Alterar funcionário");
-            System.out.println("6 - Excluir funcionário");
-            System.out.println("0 - Sair do sistema");
+            System.out.println("1 - CADASTRAR FUNCIONÁRIO CLT");
+            System.out.println("2 - CADASTRAR FUNCIONÁRIO FREELANCER");
+            System.out.println("3 - LISTA DE FUNCIONÁRIOS");
+            System.out.println("4 - PESQUISAR FUNCIONÁRIO");
+            System.out.println("5 - CALCULAR PAGAMENTO COM BÔNUS");
+            System.out.println("6 - EXCLUIR FUNCIONÁRIO");
+            System.out.println("0 - SAIR DO SISTEMA");
             System.out.println("<<<<<<<<>>>>>>><<<<<<<<<>>>>>>>>>");
-            System.out.println("Escolha uma opção: ");
+            System.out.println("ESCOLHA UMA OPÇÃO: ");
             int op = sc.nextInt();
             sc.nextLine();
 
             switch (op) {
                 case 1:{
-                    System.out.println("\n>>> CADASTRAR FUNCIONÁRIO CLT<<<");
+                    System.out.println("\n>>> CADASTRAR FUNCIONÁRIO CLT <<<");
                     System.out.println("Informe o nome: ");
                     String nome = sc.nextLine();
 
@@ -34,6 +34,7 @@ public class Principal {
 
                     System.out.println("Salário mensal: ");
                     double salarioMensal = sc.nextDouble();
+                    sc.nextLine();
 
                     funcionarios.add(new FuncionarioCLT(nome, cpf, salarioMensal));
                     System.out.println("CLT cadastrado!");
@@ -52,6 +53,7 @@ public class Principal {
 
                     System.out.println("Valor por hora: ");
                     double valorHora = sc.nextDouble();
+                    sc.nextLine();
 
                     funcionarios.add(new FuncionarioFreelancer(nome, cpf, valorHora, horasTrabalho));
                     System.out.println("Freelancer cadastrado!");
@@ -67,15 +69,86 @@ public class Principal {
                         }
                     }
                     break;
-                case 4:
-                    
+                case 4:{
+                    System.out.println("\n>>> PESQUISAR FUNCIONÁRIO <<<");
+                    if (funcionarios.isEmpty()) {
+                        System.out.println("Nenhum funcionário registrado!");
+                        break;
+                    }
+
+                    System.out.println("Informe o CPF para pesquisar: ");
+                    String cpfBusca = sc.nextLine();
+                    boolean encontrado = false;
+
+                    for (Funcionario f : funcionarios) {
+                        if (f.getCpf().equalsIgnoreCase(cpfBusca)) {
+                            System.out.println("\nFuncionário encontrado:");
+                            System.out.println(f.exibirDados());
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                    if (!encontrado) {
+                        System.out.println("CPF não encontrado.");
+                    }
                     break;
-                case 5:
+                }
                     
+                case 5:{
+                    System.out.println("\n>>> CALCULAR PAGAMENTO COM BÔNUS <<<");
+                    if (funcionarios.isEmpty()) {
+                        System.out.println("Nenhum funcionário registrado!");
+                        break;
+                    }
+
+                    System.out.println("Informe o CPF para pesquisar: ");
+                    String cpfBusca = sc.nextLine();
+                    boolean encontrado = false;
+
+                    for (Funcionario f : funcionarios) {
+                        if (f.getCpf().equalsIgnoreCase(cpfBusca)) {
+                            System.out.println("Informe o valor do bônus: R$ ");
+                            double bonus = sc.nextDouble();
+                            sc.nextLine();
+
+                            double total = f.calcPagamento(bonus);
+                            System.out.println("\nFuncionário: " + f.getNome());
+                            System.out.printf("Pagamento total (+ bônus de %.2f): R$ %.2f\n", bonus, total);
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                    if (!encontrado) {
+                        System.out.println("CPF não encontrado!");
+                    }
                     break;
-                case 6:
-                    
+                }
+                case 6:{
+                    System.out.println("\n>>> EXCLUIR FUNCIONÁRIO <<<");
+                    if (funcionarios.isEmpty()) {
+                        System.out.println("Nenhum funcionário registrado!");
+                        break;
+                    }
+
+                    System.out.println("Informe o CPF do funcionário a ser excluido: ");
+                    String cpfBusca = sc.nextLine();
+                    boolean removido = false;
+
+                    for (int i = 0; i < funcionarios.size(); i++) {
+                        if (funcionarios.get(i).getCpf().equalsIgnoreCase(cpfBusca)) {
+                            System.out.println("Funcionário: " + funcionarios.get(i).getNome() + " removido com sucesso!");
+                            funcionarios.remove(i);
+                            removido = true;
+                        }
+                    }
+
+                    if (!removido) {
+                        System.out.println("CPF não encontrado.");
+                    }
                     break;
+                }
                 case 0:
                     System.out.println("FUI......");
                     sc.close();
