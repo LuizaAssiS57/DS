@@ -71,7 +71,7 @@ public class Principal {
                     conta.fazerPagamento(valorCartao, parcelas);
                     break;
                 case 6:
-                    System.out.println("Informe o valor do pagamneto em dinheiro: R$ ");
+                    System.out.println("Informe o valor do pagamento em dinheiro: R$ ");
                     double valorDinheiro = sc.nextDouble();
                     conta.fazerPagamento(valorDinheiro);
                     break;
