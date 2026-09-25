@@ -126,7 +126,7 @@ public class Principal {
                 }
                 
                 case 0: {
-                    System.out.println("Encerrando o programa. Bom descanso!");
+                    System.out.println("Saindo...");
                     sc.close();
                     return;
                 }
