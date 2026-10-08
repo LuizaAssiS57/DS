@@ -29,7 +29,7 @@ public class Menu {
                     break;
                 case "2":
                     if (produtos.isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Nenhum produto não cadastrado!");
+                        JOptionPane.showMessageDialog(null, "Nenhum produto cadastrado!");
                     }else{
                         String lista = "Produtos cadastrados\n\n";
 
